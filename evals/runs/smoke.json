@@ -1,0 +1,38 @@
+{
+  "question": "What does v-prediction predict, and why is it useful for video generation?",
+  "expected_output": "v-prediction predicts v = alpha_t * epsilon - sigma_t * x, an interpolation between the noise and the data. It is useful for video generation because it has been shown to help avoid color shift compared to epsilon-parameterization.",
+  "answer": "The v-prediction predicts the velocity parameter \\(\\mathbf{v}_\\phi\\) defined as \\(\\mathbf{v}_\\phi = \\cos\\phi\\boldsymbol{\\epsilon} - \\sin\\phi\\mathbf{x} = \\alpha_t\\boldsymbol{\\epsilon} - \\sigma_t\\mathbf{x}\\). This prediction is useful for video generation because it helps avoid color shifts that can occur during the generation process, particularly when compared to the \\(\\boldsymbol{\\epsilon}\\)-parameterization. In video generation, the diffusion model needs to perform multiple steps of upsampling to extend video length or increase frame rates, which involves sampling a second video \\(\\mathbf{x}^b\\) conditioned on the first video \\(\\mathbf{x}^a\\). This capability is essential for generating coherent and high-quality video sequences.",
+  "chunk_count": 10,
+  "metrics": [
+    {
+      "metric": "FaithfulnessMetric",
+      "score": 1.0,
+      "passed": true,
+      "reason": "The score is 1.00 because there are no contradictions, so the actual output appears fully consistent with the retrieval context\u2014great job staying faithful to the source."
+    },
+    {
+      "metric": "AnswerRelevancyMetric",
+      "score": 1.0,
+      "passed": true,
+      "reason": "The score is 1.00 because the response stayed fully focused on explaining what v-prediction predicts and why it is useful for video generation, with no irrelevant statements. Nice, directly relevant answer."
+    },
+    {
+      "metric": "ContextualRelevancyMetric",
+      "score": 0.37142857142857144,
+      "passed": false,
+      "reason": "The score is 0.37 because most of the context is off-topic, focusing on derivations like 'trigonometric identity functions,' 'the DDIM update,' '\u03c6_t = arctan(\u03c3_t / \u03b1_t),' and even unrelated 'dataset curation' and 'cut detection pipeline' details, rather than the question. Still, a few statements are directly relevant: v-prediction 'predict[s] v = \u03b1_t \u03b5 - \u03c3_t x' and it 'has been shown to help avoid color shift in video generation compared to \u03b5-parameterization.'"
+    },
+    {
+      "metric": "ContextualPrecisionMetric",
+      "score": 0.475,
+      "passed": false,
+      "reason": "The score is 0.47 because the first node in retrieval contexts is irrelevant even though lower-ranked nodes contain the key answer: the second node states \"predict \\mathbf{v}_\\phi = \\cos\\phi\\boldsymbol{\\epsilon} -\\sin\\phi\\mathbf{x} = \\alpha_t\\boldsymbol{\\epsilon} - \\sigma_t\\mathbf{x}\", and the third node adds that it \"has been shown to be helpful for avoiding color shift in video generation compared to \\boldsymbol{\\epsilon}-parameterization.\" The score is not higher because several irrelevant nodes are interleaved before more relevant support, such as the fourth node about \"sampling of \\mathbf{x}^b can be properly conditioned on \\mathbf{x}^a\" and the fifth node about a \"cut detection pipeline,\" which should be ranked below the relevant nodes. It is still at this level because multiple early nodes in retrieval contexts do directly answer both what v-prediction predicts and why it is useful."
+    },
+    {
+      "metric": "ContextualRecallMetric",
+      "score": 1.0,
+      "passed": true,
+      "reason": "The score is 1.00 because both sentences are fully supported by nodes in retrieval context: sentence 1 is covered by node 2 and node 9, which state v = alpha_t * epsilon - sigma_t * x, with node 1 reinforcing that this is an interpolation between x and epsilon; sentence 2 is directly supported by node 3 and node 9, which say this is useful for video generation and helps avoid color shift compared to epsilon-parameterization. Great retrieval coverage."
+    }
+  ]
+}
