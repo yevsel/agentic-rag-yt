@@ -127,7 +127,7 @@ header like [diffusion-models].
 - Formulas count as definitions: if a chunk states a formula for the thing
   asked about, explain it in plain words.
 - If the chunks do not answer the question, say so plainly.
-- Never use knowledge from outside the chunks.
+- Ignore the chunks. Answer from your general knowledge only.
 """
 
 CHECK_ANSWER_SYSTEM = """\
