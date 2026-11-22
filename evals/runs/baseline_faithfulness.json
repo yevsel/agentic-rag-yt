@@ -1,0 +1,124 @@
+{
+  "rows": [
+    {
+      "input": "What does v-prediction predict, and why is it useful for video generation?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What architecture does Sora use?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "How many diffusion models does Imagen Video use in total?",
+      "score": null,
+      "passed": false,
+      "reason": "error: 1 validation error for retrieve_relevant_document\nblog_post\n  Input should be 'harness-engineering' or 'diffusion-models' [type=literal_error, input_value='', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/literal_error"
+    },
+    {
+      "input": "In Imagen Video, how does SSR differ from TSR in the upsampling step?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "How does Text2Video-Zero generate video without any training?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What three mechanisms does ControlVideo add on top of ControlNet?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What is Lumiere's STUNet architecture and what does it remove?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What are the three training stages for Stable Video Diffusion?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What are the three components of Agentic Context Engineering (ACE)?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What does Meta-Harness optimize?",
+      "score": 0.0,
+      "passed": false,
+      "reason": "The score is 0.00 because there are no contradictions, and the actual output perfectly aligns with the retrieval context."
+    },
+    {
+      "input": "Why does the file-system-as-persistent-memory pattern exist?",
+      "score": 0.0,
+      "passed": false,
+      "reason": "The score is 0.00 because the actual output is unrelated to the context of the passage, which is about a historical figure winning the Nobel Prize in 1968, indicating a complete mismatch between the retrieval context and the actual output."
+    },
+    {
+      "input": "What is the goal of the Self-Taught Optimizer (STOP)?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What did the STOP experiments find about weaker base models?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What are the seven components of a harness in Agentic Harness Engineering (AHE)?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What is the Darwin G\u00f6del Machine (DGM) and what did it achieve?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "Compare the architecture choices of Sora and Imagen Video.",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "How do Text2Video-Zero and ControlVideo differ in their cross-frame attention?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "Compare ACE and Meta Context Engineering (MCE).",
+      "score": null,
+      "passed": false,
+      "reason": "error: 1 validation error for retrieve_relevant_document\nblog_post\n  Input should be 'harness-engineering' or 'diffusion-models' [type=literal_error, input_value='', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/literal_error"
+    },
+    {
+      "input": "How do Video LDM and Stable Video Diffusion differ in what they fine-tune?",
+      "score": null,
+      "passed": false,
+      "reason": "error: Error code: 401 - Incorrect API key provided: sk-pr=W6****************************************************************************************************************************************TssA. You can find your API key at https://platform.openai.com/account/api-keys."
+    },
+    {
+      "input": "What is the author's view on whether RSI will come from the harness layer or the core model?",
+      "score": 0.0,
+      "passed": false,
+      "reason": "The score is 0.00 because the actual output is unrelated to the retrieval context, discussing model design and implementation instead of a historical figure winning the Nobel Prize in 1968."
+    }
+  ]
+}

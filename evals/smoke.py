@@ -28,8 +28,12 @@ from deepeval.metrics import (
     ContextualRelevancyMetric,
     FaithfulnessMetric,
 )
+from deepeval.models import OllamaModel
 
 from evals.run import make_test_case, run_graph
+
+# Local judge: free. Swap to a stronger model for numbers you publish.
+JUDGE = OllamaModel(model="llama3.1:8b")
 
 # Which golden to score. goldens.json has 20, so 0-19 are all valid.
 GOLDEN_INDEX = 0
@@ -59,11 +63,11 @@ test_case = make_test_case(
 # ---- 4. The five metrics -------------------------------------------------
 # One list, five rulers. Same method on each: .measure(test_case)
 metrics = [
-    FaithfulnessMetric(),         # is every claim supported by the chunks?
-    AnswerRelevancyMetric(),      # is the answer about the question?
-    ContextualRelevancyMetric(),  # how much of the context is useful?
-    ContextualPrecisionMetric(),  # are the best chunks ranked first?
-    ContextualRecallMetric(),     # did we retrieve everything needed?
+    FaithfulnessMetric(model=JUDGE),         # is every claim supported by the chunks?
+    AnswerRelevancyMetric(model=JUDGE),      # is the answer about the question?
+    ContextualRelevancyMetric(model=JUDGE),  # how much of the context is useful?
+    ContextualPrecisionMetric(model=JUDGE),  # are the best chunks ranked first?
+    ContextualRecallMetric(model=JUDGE),     # did we retrieve everything needed?
 ]
 
 # ---- 5. Score it ---------------------------------------------------------

@@ -15,7 +15,13 @@ from prompts import (
 )
 from state import AgenticGraphState
 from tools import retrieve_relevant_document
+from deepeval.metrics import ContextualRelevancyMetric
+from deepeval.models import OllamaModel
+from deepeval.tracing import observe, update_current_span
 import json
+
+# The judge that scores this span. Local, so it costs nothing.
+LOCAL_JUDGE = OllamaModel(model="llama3.1:8b")
 #====
 # Reset Node
 #====
@@ -102,6 +108,10 @@ def research_node(state:AgenticGraphState):
 # Tools Node
 #=====
 MAX_SEARCHES=4
+
+# The decorator turns this node into a span, and scores it once per run.
+# So a question with 2 searches gets 2 relevancy scores, not 1.
+@observe(type="retriever", metrics=[ContextualRelevancyMetric(model=LOCAL_JUDGE)])
 def tools_node(state:AgenticGraphState):
     last_message = state["messages"][-1]
 
@@ -130,6 +140,14 @@ def tools_node(state:AgenticGraphState):
             )
         )
         
+    # Tell DeepEval what this one search returned.
+    # `chunks` is only what THIS search found - not the accumulated list -
+    # so each search gets its own score and you can see if a retry helped.
+    update_current_span(
+        input=last_message.tool_calls[0]["args"].get("query", ""),
+        retrieval_context=[c["text"] for c in chunks],
+    )
+
     return {
         "messages": messages,
         "chunks": list(state.get("chunks") or []) + chunks,
